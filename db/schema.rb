@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[7.1].define(version: 2024_03_09_063538) do
+=======
+ActiveRecord::Schema[7.1].define(version: 2024_03_09_071137) do
+>>>>>>> 3985a82 (show single listing)
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +46,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_09_063538) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+<<<<<<< HEAD
   create_table "bookings", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "listing_id", null: false
@@ -53,6 +58,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_09_063538) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+=======
+>>>>>>> 3985a82 (show single listing)
   create_table "listings", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -79,7 +86,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_09_063538) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+<<<<<<< HEAD
   add_foreign_key "bookings", "listings"
   add_foreign_key "bookings", "users"
+=======
+>>>>>>> 3985a82 (show single listing)
   add_foreign_key "listings", "users"
 end

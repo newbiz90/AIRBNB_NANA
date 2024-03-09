@@ -1,0 +1,29 @@
+<div class="images d-flex justify-content-center">
+  <div class="about-listing d-flex">
+    <img src="<%= @listing.image_url %>" alt="listing_image">
+    <div class="d-flex flex-column">
+      <h3>Listing Title - Host: <%= @listing.user.name %></h3>
+      <p id="description"><%= @listing.description %></p>
+      <div class="d-flex p-3 c-gap">
+        <div class="d-flex flex-column">
+          <p><i class="fas fa-home"></i> Listing Type</p>
+          <p><i class="fas fa-users"></i> <%= @listing.size %></p>
+          <p><i class="fas fa-euro-sign"></i> <%= @listing.price.to_i %>/night</p>
+        </div>
+        <div class="d-flex flex-column">
+          <p><i class="far fa-map"></i> Location</p>
+          <p><i class="fas fa-wifi"></i> Wi-Fi</p>
+          <p><i class="fas fa-tv"></i> Tv</p>
+        </div>
+      </div>
+      <div class="m-auto" id="map"
+           style="width: 80%; height: 40%;"
+           data-markers="<%= @marker.to_json %>"
+           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  </div>
+  <div class="d-flex">
+    <!-- Include any additional content or components specific to your single listing page -->
+  </div>
+</div>
