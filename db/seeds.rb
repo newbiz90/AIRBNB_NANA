@@ -4,6 +4,7 @@ require 'open-uri'
 
 User.destroy_all
 Listing.destroy_all
+Review.destroy_all
 Booking.destroy_all
 
 # Create Users with Faker-generated Avatars
@@ -31,7 +32,9 @@ listing1 = Listing.create!(
   user: host_user,
   availability: true
   # Add any other listing attributes as needed
-)
+).tap do |listing|
+  listing.photos.attach(io: URI.open('https://source.unsplash.com/random/airbnb'), filename: 'house.jpg')
+end
 
 listing2 = Listing.create!(
   title: 'Cozy Apartment',
@@ -40,7 +43,9 @@ listing2 = Listing.create!(
   user: host_user,
   availability: true
   # Add any other listing attributes as needed
-)
+).tap do |listing|
+  listing.photos.attach(io: URI.open('https://source.unsplash.com/random/airbnb'), filename: 'house.jpg')
+end
 
 # Create Bookings
 booking1 = Booking.create!(
@@ -49,14 +54,28 @@ booking1 = Booking.create!(
   start_date: Date.today + 1,
   end_date: Date.today + 5
   # Add any other booking attributes as needed
-)
+).tap do |booking|
+  Review.create!(
+    user: guest_user,
+    booking: booking,
+    rating: 5,
+    content: 'A wonderful stay!')
+end
 
 booking2 = Booking.create!(
   user: guest_user,
   listing: listing2,
+  status: 'confirmed',
   start_date: Date.today + 7,
   end_date: Date.today + 10
   # Add any other booking attributes as needed
-)
+).tap do |booking|
+  Review.create!(
+    user: guest_user,
+    booking: booking,
+    rating: 5,
+    content: 'An awful stay!')
+end
+
 
 puts 'Seed data created successfully!'

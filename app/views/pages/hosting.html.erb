@@ -1,0 +1,73 @@
+<div class="container" style="margin-top: 3rem;">
+   <div>
+      <h1>
+         Welcome, <%= current_user.username %>!
+      </h1>
+   </div>
+   <div style="margin-top: 3rem; margin-bottom: 3rem;">
+      <div class="mt-4">
+         <h6>
+            Pending Bookings
+         </h6>
+         <div class="mt-4 d-flex gap-2 flex-wrap">
+            <% @pending_bookings.each do |booking| %>
+            <div class="card" style="width:420px">
+               <div class="card-body">
+                  <h5 class="card-title"><%= booking.listing.title %></h5>
+                  <p class="card-text">Guest name: <%= booking.user.username %></p>
+                  <p class="card-text">Start date: <%= booking.start_date %></p>
+                  <p class="card-text">End date: <%= booking.end_date %></p>
+
+                  <div class="d-flex justify-content-end gap-2">
+                    <a href="#" class="btn btn-success">Accept</a>
+                    <a href="#" class="btn btn-danger">Reject</a>
+                  </div>
+               </div>
+            </div>
+            <% end %>
+         </div>
+      </div>
+      <div class="mt-4">
+         <h6>
+            Upcoming Bookings
+         </h6>
+         <div class="mt-4 d-flex gap-2">
+            <% @upcoming_bookings.each do |booking| %>
+            <div class="card" style="width:420px">
+               <div class="card-body">
+                  <h5 class="card-title"><%= booking.listing.title %></h5>
+
+                  <p class="card-text">Guest name: <%= booking.user.username %></p>
+                  <p class="card-text">Start date: <%= booking.start_date %></p>
+                  <p class="card-text">End date: <%= booking.end_date %></p>
+               </div>
+            </div>
+            <% end %>
+         </div>
+      </div>
+      <div class="mt-4">
+         <h6>
+            Past Bookings
+         </h6>
+         <div class="mt-4 d-flex gap-2">
+            <% @upcoming_bookings.each do |booking| %>
+            <div class="card" style="width:420px">
+               <div class="card-body">
+                  <h5 class="card-title"><%= booking.listing.title %></h5>
+
+                  <p class="card-text">Guest name: <%= booking.user.username %></p>
+                  <p class="card-text">Start date: <%= booking.start_date %></p>
+                  <p class="card-text">End date: <%= booking.end_date %></p>
+
+                  <hr>
+                  <div>
+                    <span style="color: pink;">★★★★</span>
+                    <p class="card-text">Review here if any</p>
+                  </div>
+               </div>
+            </div>
+            <% end %>
+         </div>
+      </div>
+   </div>
+</div>
