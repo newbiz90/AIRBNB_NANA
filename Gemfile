@@ -26,6 +26,12 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# Added Gemfile by Matthew Oh on 09 Mar 2024
+gem "bootstrap", "~> 5.2"
+gem "simple_form"
+gem "sassc-rails"
+gem "dotenv-rails"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
