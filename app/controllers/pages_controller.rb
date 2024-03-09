@@ -15,5 +15,10 @@ class PagesController < ApplicationController
     .where(listing: my_listings)
     .where(status: "confirmed")
     .where("start_date > ?", Date.today)
+
+    @past_bookings = Booking
+    .where(listing: my_listings)
+    .where(status: "confirmed")
+    .where("end_date < ?", Date.today)
   end
 end

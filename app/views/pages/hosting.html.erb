@@ -50,7 +50,7 @@
             Past Bookings
          </h6>
          <div class="mt-4 d-flex gap-2">
-            <% @upcoming_bookings.each do |booking| %>
+            <% @past_bookings.each do |booking| %>
             <div class="card" style="width:420px">
                <div class="card-body">
                   <h5 class="card-title"><%= booking.listing.title %></h5>
