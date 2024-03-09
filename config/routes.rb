@@ -10,10 +10,6 @@ Rails.application.routes.draw do
   # root "posts#index"
   root "pages#landing"
   resources :listings
-<<<<<<< HEAD
   resources :bookings
   resources :users
-=======
-
->>>>>>> 3985a82 (show single listing)
 end
