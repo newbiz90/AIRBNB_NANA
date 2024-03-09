@@ -15,3 +15,36 @@
  */
 
  @import "bootstrap";
+
+ /* Styles for the flex container */
+ .d-flex {
+  display: flex;
+  flex-wrap: wrap; /* Ensures items can wrap if needed */
+  gap: 10px; /* Adds space between the items */
+}
+
+/* Centers items horizontally within the container */
+.justify-content-center {
+  justify-content: center;
+}
+
+/* Styles for each tab placeholder */
+.tab-placeholder {
+  padding: 10px 20px; /* Add some padding inside the tabs for spacing */
+  background-color: #f0f0f0; /* Light grey background */
+  border: 1px solid #ccc; /* Adds a border around each tab placeholder */
+  border-radius: 5px; /* Rounds the corners of the tabs */
+  cursor: pointer; /* Changes cursor to pointer to indicate they're clickable */
+  text-align: center; /* Centers the text within each tab */
+}
+
+/* Hover effect for tab placeholders */
+.tab-placeholder:hover {
+  background-color: #e0e0e0; /* Darker grey on hover */
+}
+
+/* Active tab style */
+.tab-placeholder.active {
+  background-color: #d0d0d0; /* Even darker grey to indicate the active tab */
+  color: #000; /* Change text color if needed */
+}
