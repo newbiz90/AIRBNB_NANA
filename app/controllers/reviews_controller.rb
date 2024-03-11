@@ -1,8 +1,11 @@
 class ReviewsController < ApplicationController
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 0623650 (add reviews files)
+=======
+>>>>>>> 3ec17c2 (added reviews files)
   def create
     @review = Review.new(review_params)
     @review.booking = Booking.find(params[:booking_id])
