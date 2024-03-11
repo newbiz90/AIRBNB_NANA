@@ -1,6 +1,12 @@
 <div class="images d-flex justify-content-center">
   <div class="about-listing d-flex">
-    <img src="<%= @listing%>" alt="listing_image">
+    <% if @listing.photos.attached? %>
+      <% photo = @listing.photos.first %>
+      <img src="https://source.unsplash.com/random/airbnb" alt="listing_image">
+    <% else %>
+      <!-- If no photo is attached, you may display a placeholder or handle it differently -->
+      <p>No photo available</p>
+    <% end %>
     <div class="d-flex flex-column">
       <h3>Listing Title - Host: <%= @listing%></h3>
       <p id="description"><%= @listing.description%></p>
