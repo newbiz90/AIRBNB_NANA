@@ -1,16 +1,8 @@
 class BookingsController < ApplicationController
-  def new
-    @booking = Booking.new
-    @listing = Listing.first # Replace with your logic to get the current listing
-  end
-
   def create
-    # Step 1: Fetch parameters
-    booking_params = params.require(:booking).permit(:start_date, :end_date)
-
     # Step 2: Create a new booking associated with the current user
     @booking = current_user.bookings.build(booking_params)
-    @booking.listing = Listing.first # Replace with your logic to get the current listing
+    @booking.listing = Listing.find(params[:listing_id])
     @booking.status = 'confirmed'
 
     # Step 3: Save the booking to the database
@@ -21,5 +13,11 @@ class BookingsController < ApplicationController
       # Step 4 (Failure): Render the new action with an error message
       render :new
     end
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
