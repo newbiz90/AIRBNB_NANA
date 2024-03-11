@@ -12,8 +12,9 @@ Rails.application.routes.draw do
 
   get "/hosting", to: "pages#hosting"
 
-  resources :listings
-  resources :bookings
+  resources :listings do
+    resources :bookings
+  end
   resources :users
   resources :reviews
 end
