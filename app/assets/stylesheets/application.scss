@@ -1,50 +1,12 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
 
- @import "bootstrap";
+// External libraries
+@import "bootstrap";
+@import "font-awesome";
 
- /* Styles for the flex container */
- .d-flex {
-  display: flex;
-  flex-wrap: wrap; /* Ensures items can wrap if needed */
-  gap: 10px; /* Adds space between the items */
-}
-
-/* Centers items horizontally within the container */
-.justify-content-center {
-  justify-content: center;
-}
-
-/* Styles for each tab placeholder */
-.tab-placeholder {
-  padding: 10px 20px; /* Add some padding inside the tabs for spacing */
-  background-color: #f0f0f0; /* Light grey background */
-  border: 1px solid #ccc; /* Adds a border around each tab placeholder */
-  border-radius: 5px; /* Rounds the corners of the tabs */
-  cursor: pointer; /* Changes cursor to pointer to indicate they're clickable */
-  text-align: center; /* Centers the text within each tab */
-}
-
-/* Hover effect for tab placeholders */
-.tab-placeholder:hover {
-  background-color: #e0e0e0; /* Darker grey on hover */
-}
-
-/* Active tab style */
-.tab-placeholder.active {
-  background-color: #d0d0d0; /* Even darker grey to indicate the active tab */
-  color: #000; /* Change text color if needed */
-}
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
