@@ -10,6 +10,11 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+    @review = Review.new
+  end
+
   private
 
   def review_params

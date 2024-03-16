@@ -45,4 +45,30 @@
     <%= f.submit "Book", class: "btn btn-primary" %>
   <% end %>
   </div>
+
+  <div class="review-container">
+    <div class="d-flex justify-content-around">
+      <div class="reviews flex-grow-1 mr-5 mb-3 p-3">
+        <h5>Reviews</h5>
+        <% if @reviews.present? %>
+          <% @reviews.each do |review| %>
+            <ul class="lists list-group list-group-flush">
+              <li class="border-bottom">
+                <span><%= review.user_id %></span>
+                <small class="mx-3"><%= distance_of_time_in_words(Time.now, review.created_at) %> ago</small>
+                <div class="d-flex mt-1">
+                  <% review.rating.times do %>
+                    <i class="fas fa-star" style="color:#E31C5E;"></i>
+                  <% end %>
+                </div>
+                <p id="review-<%= review.id %>"><%= review.content %></p>
+              </li>
+            </ul>
+          <% end %>
+        <% else %>
+          <p>No reviews available</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
