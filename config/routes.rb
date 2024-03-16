@@ -14,14 +14,15 @@ Rails.application.routes.draw do
 
   resources :listings do
     resources :bookings
-    resources :reviews
   end
+
   resources :bookings do
+    resources :reviews
     member do
       patch :accept
       patch :reject
     end
   end
+
   resources :users
-  resources :reviews
 end

@@ -1,0 +1,33 @@
+#test to be built by kwan
+<!-- app/views/listings/index.html.erb -->
+
+<h1>Listings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Posted by</th>
+      <th>Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @listings.each do |listing| %>
+      <tr>
+        <td><%= listing.title %></td>
+        <td><%= listing.description %></td>
+        <td><%= number_to_currency(listing.price) %></td>
+        <td><%= listing.user.username %></td>
+        <td>
+          <% if listing.photos.attached? %>
+            <%= image_tag(listing.photos.first.variant(resize_to_limit: [100, 100]), alt: "Listing image") %>
+          <% else %>
+            No image available
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

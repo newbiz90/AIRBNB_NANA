@@ -1,14 +1,14 @@
 class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
-    @review.booking = Booking.find(params[:booking_id])
-
+    @booking = Booking.find(params[:booking_id])
     @review.booking = @booking
+    @review.user = current_user
 
     if @review.save
-      redirect_to flat_path(@review.booking.flat, anchor: "review-#{@review.id}")
+      redirect_to listing_path(@booking.listing), notice: 'Review saved' # Redirect to the index action
     else
-      render :new
+      redirect_to listing_path(@booking.listing), notice: 'Review saved' # Redirect to the index action
     end
   end
 

@@ -29,7 +29,7 @@
   <!-- Single Product Listing with Small Bounding Box -->
   <h3>$<%= @listing.price %> SGD per night</h3>
 
-  <%= simple_form_for([@listing, @booking]) do |f| %>
+  <%= simple_form_for([@listing, Booking.new]) do |f| %>
     <div class="form-group">
       <%= f.input :start_date, as: :string,class: 'form-control', input_html: {
         "data-controller" => "datepicker"
@@ -45,10 +45,12 @@
     <%= f.submit "Book", class: "btn btn-primary" %>
   <% end %>
 
-  <%= simple_form_for([ @listing, @booking, @review ]) do |f| %>
-    <%= f.input :rating, as: :select, collection: (1..5), input_html: { id: 'rating' } %>
-    <%= f.input :content %>
-    <%= f.submit 'Create review', class: "button mt-3 mb-3" %>
+  <% if @booking && !@booking.review %>
+    <%= simple_form_for([ @booking, @review ]) do |f| %>
+      <%= f.input :rating, as: :select, collection: (1..5), input_html: { id: 'rating' } %>
+      <%= f.input :content %>
+      <%= f.submit 'Create review', class: "button mt-3 mb-3" %>
+    <% end %>
   <% end %>
   </div>
 
