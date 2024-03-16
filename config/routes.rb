@@ -15,6 +15,12 @@ Rails.application.routes.draw do
   resources :listings do
     resources :bookings
   end
+  resources :bookings do
+    member do
+      patch :accept
+      patch :reject
+    end
+  end
   resources :users
   resources :reviews
 end
