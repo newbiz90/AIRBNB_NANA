@@ -44,6 +44,12 @@
 
     <%= f.submit "Book", class: "btn btn-primary" %>
   <% end %>
+
+  <%= simple_form_for([ @listing, @booking, @review ]) do |f| %>
+    <%= f.input :rating, as: :select, collection: (1..5), input_html: { id: 'rating' } %>
+    <%= f.input :content %>
+    <%= f.submit 'Create review', class: "button mt-3 mb-3" %>
+  <% end %>
   </div>
 
   <div class="review-container">
@@ -57,9 +63,7 @@
                 <span><%= review.user_id %></span>
                 <small class="mx-3"><%= distance_of_time_in_words(Time.now, review.created_at) %> ago</small>
                 <div class="d-flex mt-1">
-                  <% review.rating.times do %>
-                    <i class="fas fa-star" style="color:#E31C5E;"></i>
-                  <% end %>
+                  <%= review.rating %>
                 </div>
                 <p id="review-<%= review.id %>"><%= review.content %></p>
               </li>
@@ -71,4 +75,7 @@
       </div>
     </div>
   </div>
+
+
+
 </div>
