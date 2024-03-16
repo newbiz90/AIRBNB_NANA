@@ -1,0 +1,11 @@
+<h1>Booking Details</h1>
+<p>Status: <%= @booking.status %></p>
+
+<% if @booking.status == 'pending' %>
+  <%= form_with(model: @booking, url: accept_booking_path(@booking), method: :patch) do |form| %>
+    <%= form.submit 'Accept', class: 'btn btn-success' %>
+  <% end %>
+    <%= form_with(model: @booking, url: reject_booking_path(@booking), method: :patch) do |form| %>
+    <%= form.submit 'Reject', class: 'btn btn-danger' %>
+  <% end %>
+<% end %>
