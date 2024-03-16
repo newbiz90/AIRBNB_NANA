@@ -2,11 +2,6 @@
 require 'faker'
 require 'open-uri'
 
-User.destroy_all
-Listing.destroy_all
-Review.destroy_all
-Booking.destroy_all
-
 # Create Users with Faker-generated Avatars
 host_user = User.create!(
   username: 'host',
@@ -54,13 +49,23 @@ booking1 = Booking.create!(
   start_date: Date.today + 1,
   end_date: Date.today + 5
   # Add any other booking attributes as needed
-).tap do |booking|
-  Review.create!(
-    user: guest_user,
-    booking: booking,
-    rating: 5,
-    content: 'A wonderful stay!')
-end
+)
+
+# Create the review for the booking
+review1 = Review.create!(
+  user: guest_user,
+  booking: booking1,
+  rating: 5,
+  content: 'A wonderful stay!'
+)
+
+# Create the review for the booking
+review2 = Review.create!(
+  user: guest_user,
+  booking: booking1,
+  rating: 2,
+  content: 'A bad stay!'
+)
 
 booking2 = Booking.create!(
   user: guest_user,
@@ -69,13 +74,13 @@ booking2 = Booking.create!(
   start_date: Date.today + 7,
   end_date: Date.today + 10
   # Add any other booking attributes as needed
-).tap do |booking|
-  Review.create!(
-    user: guest_user,
-    booking: booking,
-    rating: 5,
-    content: 'An awful stay!')
-end
+)
 
+review3 = Review.create!(
+  user: guest_user,
+  booking: booking2,
+  rating: 5,
+  content: 'An awful stay!'
+)
 
 puts 'Seed data created successfully!'

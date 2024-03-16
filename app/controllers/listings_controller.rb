@@ -1,8 +1,10 @@
 class ListingsController < ApplicationController
 
   def show
-    @listings = Listing.all
-    #@booking = Booking.new
+    @listing = Listing.find(params[:id])
+    @booking = Booking.find_by(listing: @listing, user: current_user)
+    @review = Review.new
+    @reviews = @listing.reviews
   end
 
   def new
