@@ -2,7 +2,7 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
-    @booking = Booking.find_by(listing: @listing, user: current_user)
+    @booking = Booking.where(listing: @listing, user: current_user).order(created_at: :desc).first
     @review = Review.new
     @reviews = @listing.reviews
   end
