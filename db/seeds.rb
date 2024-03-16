@@ -59,6 +59,14 @@ review1 = Review.create!(
   content: 'A wonderful stay!'
 )
 
+# Create the review for the booking
+review2 = Review.create!(
+  user: guest_user,
+  booking: booking1,
+  rating: 2,
+  content: 'A bad stay!'
+)
+
 booking2 = Booking.create!(
   user: guest_user,
   listing: listing2,
@@ -68,7 +76,7 @@ booking2 = Booking.create!(
   # Add any other booking attributes as needed
 )
 
-review2 = Review.create!(
+review3 = Review.create!(
   user: guest_user,
   booking: booking2,
   rating: 5,
