@@ -3,6 +3,8 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.booking = Booking.find(params[:booking_id])
 
+    @review.booking = @booking
+
     if @review.save
       redirect_to flat_path(@review.booking.flat, anchor: "review-#{@review.id}")
     else

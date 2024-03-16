@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :listings do
     resources :bookings
+    resources :reviews
   end
   resources :bookings do
     member do
