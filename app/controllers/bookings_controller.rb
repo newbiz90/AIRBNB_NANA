@@ -30,7 +30,7 @@ class BookingsController < ApplicationController
   end
 
   def reject
-    @booking.status = 'rejected'
+    @booking.status = 'declined'
     # Step 3: Save the booking to the database
     if @booking.save
       # Step 4 (Success): Redirect to a success page or perform other actions
