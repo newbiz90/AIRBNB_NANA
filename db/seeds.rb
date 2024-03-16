@@ -77,5 +77,4 @@ booking2 = Booking.create!(
     content: 'An awful stay!')
 end
 
-
 puts 'Seed data created successfully!'
