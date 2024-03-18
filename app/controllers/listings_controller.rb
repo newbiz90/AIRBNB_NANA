@@ -1,8 +1,8 @@
 class ListingsController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def show
     @listing = Listing.find(params[:id])
-    @booking = Booking.find_by(listing: @listing, user: current_user)
+    @booking = Booking.where(listing: @listing, user: current_user).order(created_at: :desc).first
     @review = Review.new
     @reviews = @listing.reviews
   end
