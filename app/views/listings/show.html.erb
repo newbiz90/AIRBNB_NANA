@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row">
+ <%# main listing  %>
     <div class="col-md-6">
       <div class="about-listing">
         <% if @listing.photos.attached? %>
@@ -28,6 +29,7 @@
       </div>
     </div>
 
+  <%# review container %>
     <div class="col-md-6">
       <div class="review-container">
         <h5>Reviews</h5>
@@ -35,10 +37,11 @@
           <% @reviews.each do |review| %>
             <ul class="lists list-group list-group-flush">
               <li class="border-bottom">
-                <span><%= review.user_id %></span>
+                <span>User Id: <%= review.user_id %></span>
                 <small class="mx-3"><%= distance_of_time_in_words(Time.now, review.created_at) %> ago</small>
                 <div class="d-flex mt-1">
-                  <%= review.rating %>
+                  <% rating = review.rating %>
+                  Rating: <%= pp rating %>
                 </div>
                 <p id="review-<%= review.id %>"><%= review.content %></p>
               </li>
@@ -51,6 +54,7 @@
     </div>
   </div>
 
+  <%# booking form %>
   <div class="row">
     <div class="col-md-6">
       <div class="booking-form">
