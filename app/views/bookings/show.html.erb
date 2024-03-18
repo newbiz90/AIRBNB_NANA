@@ -1,11 +1,17 @@
-<h1>Booking Details</h1>
-<p>Status: <%= @booking.status %></p>
+<div class="booking-details">
+  <h2>Booking Details</h2>
+  <p>Status: <span class="<%= "status-" + @booking.status.downcase %>"><%= @booking.status %></span></p>
+  <p>Start Date: <span class="date"><%= @booking.start_date.strftime("%B %d, %Y") %></span></p>
+  <p>End Date: <span class="date"><%= @booking.end_date.strftime("%B %d, %Y") %></span></p>
+</div>
 
-<% if @booking.status == 'pending' %>
-  <%= form_with(model: @booking, url: accept_booking_path(@booking), method: :patch) do |form| %>
-    <%= form.submit 'Accept', class: 'btn btn-success' %>
-  <% end %>
-    <%= form_with(model: @booking, url: reject_booking_path(@booking), method: :patch) do |form| %>
-    <%= form.submit 'Reject', class: 'btn btn-danger' %>
-  <% end %>
-<% end %>
+
+<%# REMOVE THE ACCEPT AND REJECT BUTTONS %>
+<%# if @booking.status == 'pending' %>
+  <%#= form_with(model: @booking, url: accept_booking_path(@booking), method: :patch) do |form| %>
+    <%#= form.submit 'Accept', class: 'btn btn-success' %>
+  <%# end %>
+    <%#= form_with(model: @booking, url: reject_booking_path(@booking), method: :patch) do |form| %>
+    <%#= form.submit 'Reject', class: 'btn btn-danger' %>
+  <%# end %>
+<%# end %>
