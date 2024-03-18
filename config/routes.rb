@@ -10,10 +10,9 @@ Rails.application.routes.draw do
   #GET localhost:3000/listing
   get "/listing", to: "pages#listing"
 
-
   # Defines the root path route ("/")
   # root "posts#index"
-  root "pages#landing"
+  root "listings#index"
 
   get "/hosting", to: "pages#hosting"
 
