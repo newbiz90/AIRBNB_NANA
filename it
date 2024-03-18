@@ -1,0 +1,526 @@
+[33mcommit 9015627009c12d5d3e6139e4e065864db9f3f072[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: cc62d43 35f9951
+Author: Matthew Oh <78940863+newbiz90@users.noreply.github.com>
+Date:   Sat Mar 16 16:34:21 2024 +0800
+
+    Merge pull request #29 from newbiz90/feature/38
+    
+    Config: Fix broken configurations and initialize Nav and Flashes
+
+[33mcommit cc62d432ce3f5bb0bb9b90dabdc6127ca6f538a2[m
+Merge: eadc024 e9be29d
+Author: Matthew Oh <78940863+newbiz90@users.noreply.github.com>
+Date:   Sat Mar 16 16:34:00 2024 +0800
+
+    Merge pull request #28 from newbiz90/feature/show_listings
+    
+    listing page
+
+[33mcommit 35f99512bfad64a1714b02061b1356625a528caf[m[33m ([m[1;31morigin/feature/38[m[33m)[m
+Author: Yong Cheng Low <lowyongcheng@hotmail.com>
+Date:   Sat Mar 16 15:55:45 2024 +0800
+
+    Home: Add Navbar and Flashes
+
+[33mcommit dbe6bcab0f7fb647a852b494bd49f5f47b3e1913[m
+Author: Yong Cheng Low <lowyongcheng@hotmail.com>
+Date:   Sat Mar 16 15:54:35 2024 +0800
+
+    Config: Fix broken bootstrap configurations
+
+[33mcommit e38727c24d697e1b7f9b85ca0e07cb32ec224696[m
+Author: Yong Cheng Low <lowyongcheng@hotmail.com>
+Date:   Sat Mar 16 15:49:46 2024 +0800
+
+    Config: Add missing styles
+
+[33mcommit ae8446762568b68b8cb308b41d9dec8736d1d636[m
+Author: Yong Cheng Low <lowyongcheng@hotmail.com>
+Date:   Sat Mar 16 15:21:37 2024 +0800
+
+    Config: Add missing Gems
+
+[33mcommit e9be29d512a0d5778580f18c06fd04e8d0bcfb50[m
+Merge: 5003f52 eadc024
+Author: Yong Cheng Low <lowyongcheng@hotmail.com>
+Date:   Sat Mar 16 16:31:04 2024 +0800
+
+    Merge branch 'master' into feature/show_listings
+
+[33mcommit 5003f5200cf43d5d1843eadc1c6c2aa0d35d2255[m[33m ([m[1;31morigin/feature/show_listings[m[33m)[m
+Author: KY KWAN <embers3101@gmail.com>
+Date:   Sat Mar 16 15:48:56 2024 +0800
+
+    listing page
+
+[33mcommit eadc024926659ebc484b7d0ecdbe5c4550bf6fc0[m
+Merge: 5966bf0 ddc6cb7
+Author: ericsson chan <100125542+ericssonchannn@users.noreply.github.com>
+Date:   Sat Mar 16 15:32:54 2024 +0800
+
+    Merge pull request #27 from newbiz90/feature/reviews
+    
+    added reviews
+
+[33mcommit ddc6cb71034ac851a5b8bc1a96bf6157ef018fe5[m
+Author: ericsson chan <ericssonchann@gmail.com>
+Date:   Sat Mar 16 15:32:25 2024 +0800
+
+    added reviews
+
+[33mcommit 5966bf0814459f1c2b91f541ae551a828764d3cc[m
+Merge: a9feacb 14fbc13
+Author: Matthew Oh <78940863+newbiz90@users.noreply.github.com>
+Date:   Sat Mar 16 15:03:54 2024 +0800
+
+    Merge pull request #26 from newbiz90/accept_reject_booking
+    
+    accept reject booking done
+
+[33mcommit 14fbc13a6f450184831f10b0b54a970be5805851[m
+Author: Matthew Oh <newbiz90@hotmail.com>
+Date:   Sat Mar 16 15:02:55 2024 +0800
+
+    accept reject booking done
+
+[33mcommit a9feacb2492fa09b0b325347958dcee12ddaa9a6[m
+Merge: 28b6eea e18e92d
+Author: Matthew Oh <78940863+newbiz90@users.noreply.github.com>
+Date:   Sat Mar 16 11:31:58 2024 +0800
+
+    Merge pull request #25 from newbiz90/fix_seed
+    
+    fixed seed
+
+[33mcommit e18e92db8b05bcceae8660f1fef1fb53eeab20ab[m
+Author: Matthew Oh <newbiz90@hotmail.com>
+Date:   Sat Mar 16 11:31:10 2024 +0800
+
+    fixed seed v2
+
+[33mcommit 36eab21e611346235afef64177b2764487d2c9d3[m
+Author: Matthew Oh <newbiz90@hotmail.com>
+Date:   Sat Mar 16 11:29:41 2024 +0800
+
+    fixed seed
+
+[33mcommit 28b6eead2f9e93a469f249e01152c42078355e08[m
+Merge: 9b65e66 f96abe2
+Author: ericsson chan <100125542+ericssonchannn@users.noreply.github.com>
+Date:   Sat Mar 16 10:52:07 2024 +0800
+
+    Merge pull request #24 from newbiz90/feature/reviews
+    
+    need to fix seed file
+
+[33mcommit f96abe26e7923b0f2c38323f293f41c42dbdb9a3[m
+Author: ericsson chan <ericssonchann@gmail.com>
+Date:   Sat Mar 16 10:51:38 2024 +0800
+
+    need to fix seed file
+
+[33mcommit 9b65e661b1d304e916de81837d3bdde906d4820e[m
+Merge: 9873c70 026f92d
+Author: ericsson chan <100125542+ericssonchannn@users.noreply.github.com>
+Date:   Wed Mar 13 20:23:45 2024 +0800
+
+    Merge pull request #22 from newbiz90/feature/reviews
+    
+    added files
+
+[33mcommit 026f92d28fbfe27a86b16753f98e6f75d52fa269[m
+Author: ericsson chan <ericssonchann@gmail.com>
+Date:   Wed Mar 13 20:23:15 2024 +0800
+
+    added files
+
+[33mcommit 9873c701894da773a4e0100dd3c0a55c7aef6334[m
+Author: ericsson chan <ericssonchann@gmail.com>
+Date:   Wed Mar 13 19:58:00 2024 +0800
+
+    add reviews file
+
+[33mcommit acfadad6b3011b57f742d4fa3dc2b3153b4144f7[m
+Author: ericsson chan <ericssonchann@gmail.com>
+Date:   Mon Mar 11 22:10:53 2024 +0800
+
+    add files
+
+[33mcommit 92d89f89ce02f8e50ff84ed9a09246e6ee4c6a62[m
+Author: ericsson chan <ericssonchann@gmail.com>
+Date:   Mon Mar 11 22:09:12 2024 +0800
+
+    added reviews files
+
+[33mcommit 23db50b48f0bc4780fd8088a3779dd19fc8bbcf7[m
+Merge: c73916c 582bf8d
+Author: ericsson chan <100125542+ericssonchannn@users.noreply.github.com>
+Date:   Mon Mar 11 22:06:52 2024 +0800
+
+    Merge pull request #21 from newbiz90/feature/reviews
+    
+    add reviews files
+
+[33mcommit 582bf8d7bfbd6845cecf9d92e8063559604a9b31[m
+Author: ericsson chan <ericssonchann@gmail.com>
+Date:   Mon Mar 11 22:05:05 2024 +0800
+
+    add reviews files
+
+[33mcommit c73916c4bf099aee154607cd483ddfa77bc6ad1c[m
+Merge: 2cd3185 b70d802
+Author: Matthew Oh <78940863+newbiz90@users.noreply.github.com>
+Date:   Mon Mar 11 21:57:41 2024 +0800
+
+    Merge pull request #20 from newbiz90/integrate_box
+    
+    integrated_box
+
+[33mcommit b70d80238c4b732db63358d97ae9862f635a26a4[m
+Author: Matthew Oh <newbiz90@hotmail.com>
+Date:   Mon Mar 11 21:56:42 2024 +0800
+
+    integrated_box
+
+[33mcommit 2cd31850dee4e9febd0ed6646a70951223efba92[m
+Merge: 829556b 4c3fc2e
+Author: ericsson chan <100125542+ericssonchannn@users.noreply.github.com>
+Date:   Mon Mar 11 21:02:54 2024 +0800
+
+    Merge pull request #19 from newbiz90/feature/reviews
+    
+    add review feature
+
+[33mcommit 4c3fc2ed44cbffb7df18d7f922d2e90013e4bfe2[m
+Author: ericsson chan <ericssonchann@gmail.com>
+Date:   Mon Mar 11 21:01:07 2024 +0800
+
+    add review feature
+
+[33mcommit 829556b63873791097fefb49e9a1a90e2c9eaae2[m
+Merge: 18693a4 88d37f3
+Author: Matthew Oh <78940863+newbiz90@users.noreply.github.com>
+Date:   Mon Mar 11 20:45:18 2024 +0800
+
+    Merge pull request #18 from newbiz90/booking_mini_page
+    
+    booking_mini_page_done
+
+[33mcommit 88d37f30257059fe8d54a8fa5f6a6d2135b8bcb2[m
+Author: Matthew Oh <newbiz90@hotmail.com>
+Date:   Mon Mar 11 20:44:33 2024 +0800
+
+    booking_mini_page_done
+
+[33mcommit 18693a4f79aff259212aebb7007885c0270fd0a9[m
+Merge: 187cd0a d4aa046
+Author: ericsson chan <100125542+ericssonchannn@users.noreply.github.com>
+Date:   Mon Mar 11 19:47:06 2024 +0800
+
+    Merge pull request #17 from newbiz90/feature/show_listing
+    
+    schema change
+
+[33mcommit d4aa04657161755e32a8cacd1ec244ad2619af3c[m
+Author: ericsson chan <ericssonchann@gmail.com>
+Date:   Mon Mar 11 19:44:50 2024 +0800
+
+    schema change
+
+[33mcommit 187cd0ab4cddb7d41d378f5ece386e28893d7eaf[m
+Merge: 28a507d c9eb130
+Author: Zong Han <zonghangoh@gmail.com>
+Date:   Sat Mar 9 18:07:05 2024 +0800
+
+    Merge pull request #16 from newbiz90/feature/hosting_page
+    
+    Host Dashboard
+
+[33mcommit c9eb1304caf1cbf37eb848d720d679a3b2ebcdea[m
+Author: Zong Han Goh <zonghangoh@gmail.com>
+Date:   Sat Mar 9 18:02:36 2024 +0800
+
+    past bookin
+    gs for hosting page
+
+[33mcommit 13519b2d95884f877aa7f9a09e34737c2aabd605[m
+Merge: bc94968 d794948
+Author: Zong Han Goh <zonghangoh@gmail.com>
+Date:   Sat Mar 9 18:01:13 2024 +0800
+
+    Merge branch 'feature/hosting_page' of github.com:newbiz90/AIRBNB_NANA into feature/hosting_page
+
+[33mcommit bc94968a0ea7b18048c1aaf7ae02590ad676c1fe[m
+Author: Zong Han Goh <zonghangoh@gmail.com>
+Date:   Sat Mar 9 18:01:01 2024 +0800
+
+    add statuses to booking
+
+[33mcommit d794948d907797d9e4c4bfacc8f6d808f885fc58[m
+Merge: 5d0d6ba 28a507d
+Author: Zong Han <zonghangoh@gmail.com>
+Date:   Sat Mar 9 17:35:26 2024 +0800
+
+    Merge branch 'master' into feature/hosting_page
+
+[33mcommit 5d0d6ba6af904b31959d6b3e1c4dca685ca2f24b[m
+Author: Zong Han Goh <zonghangoh@gmail.com>
+Date:   Sat Mar 9 17:32:11 2024 +0800
+
+    implement hosting page
+
+[33mcommit 28a507df96f88496b19d2691612d660fdbb2f18c[m
+Merge: 299605e cdb7ce8
+Author: ericsson chan <100125542+ericssonchannn@users.noreply.github.com>
+Date:   Sat Mar 9 17:19:49 2024 +0800
+
+    Merge pull request #15 from newbiz90/feature/show_listing
+    
+    show single listing
+
+[33mcommit cdb7ce88dd45510106b9a9e8fee56a6050c04e10[m
+Author: ericsson chan <ericssonchann@gmail.com>
+Date:   Sat Mar 9 17:09:30 2024 +0800
+
+    show single listing
+
+[33mcommit 299605ec458607ffa79a1d2cfe8ca61d2e2c9914[m
+Merge: a0c9e74 c53b0d3
+Author: Matthew Oh <78940863+newbiz90@users.noreply.github.com>
+Date:   Sat Mar 9 17:03:29 2024 +0800
+
+    Merge pull request #14 from newbiz90/booking_box_for_listing
+    
+    booking box for listing
+
+[33mcommit c53b0d370b09c001d8948cd3f91a1753d25f9809[m[33m ([m[1;31morigin/booking_box_for_listing[m[33m)[m
+Author: Matthew Oh <newbiz90@hotmail.com>
+Date:   Sat Mar 9 17:02:53 2024 +0800
+
+    booking box for listing
+
+[33mcommit a0c9e74e0636709fbc4cca9a8456647bf03bd28b[m
+Merge: 19a97e3 548e3b7
+Author: embers29a <149821596+embers29a@users.noreply.github.com>
+Date:   Sat Mar 9 16:54:34 2024 +0800
+
+    Merge pull request #13 from newbiz90/feature/navbar
+    
+    navbar
+
+[33mcommit 548e3b7396f5e22fe3e70a813d7dcac75491ebba[m[33m ([m[1;31morigin/feature/navbar[m[33m)[m
+Author: KY KWAN <embers3101@gmail.com>
+Date:   Sat Mar 9 16:23:02 2024 +0800
+
+    navbar
+
+[33mcommit 19a97e3d14722e8f24161cebd6454cf0f8826ff4[m
+Merge: 3006b3b 7ba24d4
+Author: ericsson chan <100125542+ericssonchannn@users.noreply.github.com>
+Date:   Sat Mar 9 16:31:37 2024 +0800
+
+    Merge pull request #12 from newbiz90/feature/show_listing
+    
+    show single listing
+
+[33mcommit 7ba24d43e38b3df40ba89fa10db98f49a18b2b65[m
+Author: ericsson chan <ericssonchann@gmail.com>
+Date:   Sat Mar 9 16:26:29 2024 +0800
+
+    show single listing
+
+[33mcommit 3006b3b42c9e3b2de18a8adfc2bb0841d53d8bd7[m
+Merge: bcaacd2 78dbb79
+Author: Matthew Oh <78940863+newbiz90@users.noreply.github.com>
+Date:   Sat Mar 9 15:23:22 2024 +0800
+
+    Merge pull request #11 from newbiz90/create_controller
+    
+    Create Controllers
+
+[33mcommit 78dbb79ec290960b06405dec2ccec6764d69ee2c[m[33m ([m[1;31morigin/create_controller[m[33m)[m
+Author: Matthew Oh <newbiz90@hotmail.com>
+Date:   Sat Mar 9 15:22:47 2024 +0800
+
+    Create Controllers
+
+[33mcommit bcaacd234d1bace7813136ce20a8163feda82bbc[m
+Merge: 869b747 399e377
+Author: Matthew Oh <78940863+newbiz90@users.noreply.github.com>
+Date:   Sat Mar 9 15:11:05 2024 +0800
+
+    Merge pull request #10 from newbiz90/seed
+    
+    seed file updated
+
+[33mcommit 399e37744b7205f6d0508b30cd8f96d535d096ef[m[33m ([m[1;31morigin/seed[m[33m)[m
+Author: Matthew Oh <newbiz90@hotmail.com>
+Date:   Sat Mar 9 15:06:49 2024 +0800
+
+    seed file updated
+
+[33mcommit 869b747e01de9d081657e1def767cdeaba111788[m
+Merge: 82168ff 0161d5a
+Author: Matthew Oh <78940863+newbiz90@users.noreply.github.com>
+Date:   Sat Mar 9 15:05:36 2024 +0800
+
+    Merge pull request #9 from newbiz90/seed
+    
+    seed file done
+
+[33mcommit 0161d5a8dcc7d02419771cce491a7bb8972b09d5[m
+Author: Matthew Oh <newbiz90@hotmail.com>
+Date:   Sat Mar 9 15:03:58 2024 +0800
+
+    seed file done
+
+[33mcommit 82168ff4d599cacb1101352206b934d2a7a674db[m
+Merge: 2abc5d1 c64effc
+Author: ericsson chan <100125542+ericssonchannn@users.noreply.github.com>
+Date:   Sat Mar 9 14:50:28 2024 +0800
+
+    Merge pull request #8 from newbiz90/feature/add_username_field
+    
+    add username to user model
+
+[33mcommit c64effcb034d0a63e82fb35a85b274a330bd7c78[m
+Author: ericsson chan <ericssonchann@gmail.com>
+Date:   Sat Mar 9 14:46:32 2024 +0800
+
+    add username to user model
+
+[33mcommit 2abc5d136ba0312d198c2241017ebb46e4b0b0e0[m
+Merge: f6c4955 384e7fa
+Author: Matthew Oh <78940863+newbiz90@users.noreply.github.com>
+Date:   Sat Mar 9 14:37:48 2024 +0800
+
+    Merge pull request #7 from newbiz90/db_schema
+    
+    db schema done
+
+[33mcommit 384e7fa77f3b69ea8981f952acc44582233976ce[m
+Author: Matthew Oh <newbiz90@hotmail.com>
+Date:   Sat Mar 9 14:37:24 2024 +0800
+
+    db schema done
+
+[33mcommit f6c495583eda3d89856e4aee34c7e997479715c6[m[33m ([m[1;31morigin/eric[m[33m)[m
+Merge: 28bdecd 238f5dc
+Author: Matthew Oh <78940863+newbiz90@users.noreply.github.com>
+Date:   Sat Mar 9 14:22:43 2024 +0800
+
+    Merge pull request #6 from newbiz90/dp_user_model2
+    
+    added dp_user_photo sucessfully
+
+[33mcommit 238f5dc99aea25fa1b127fbcb1845c5a4759bb86[m
+Author: Matthew Oh <newbiz90@hotmail.com>
+Date:   Sat Mar 9 14:22:14 2024 +0800
+
+    added dp_user_photo sucessfully
+
+[33mcommit 28bdecdbefe67b823cd571641206f9693db9a550[m
+Merge: 4ebae7f 0d7e290
+Author: embers29a <149821596+embers29a@users.noreply.github.com>
+Date:   Sat Mar 9 14:03:31 2024 +0800
+
+    Merge pull request #5 from newbiz90/kwan
+    
+    Initial bootstrap setup + navbar
+
+[33mcommit 0d7e290a3bd2dec6deae129a75e78627ff3626bb[m
+Merge: 3011a9a 4ebae7f
+Author: embers29a <149821596+embers29a@users.noreply.github.com>
+Date:   Sat Mar 9 14:03:21 2024 +0800
+
+    Merge branch 'master' into kwan
+
+[33mcommit 4ebae7fb008e29eb35de012e18106aae38678ab5[m
+Merge: 6c5cf93 659925b
+Author: ericsson chan <100125542+ericssonchannn@users.noreply.github.com>
+Date:   Sat Mar 9 14:01:23 2024 +0800
+
+    Merge pull request #4 from newbiz90/eric
+    
+    Added username to user model
+
+[33mcommit 3011a9ac0b7b4e0f96bc6e92a551e982fb12a51a[m[33m ([m[1;31morigin/kwan[m[33m)[m
+Author: KY KWAN <embers3101@gmail.com>
+Date:   Sat Mar 9 14:01:07 2024 +0800
+
+    initial navbar
+
+[33mcommit 659925b448864f825c3abcc2bc0da43f8de8acc2[m
+Author: ericsson chan <ericssonchann@gmail.com>
+Date:   Sat Mar 9 13:56:10 2024 +0800
+
+    Added username to user model
+
+[33mcommit 6c5cf93144d55167c5f4f9433db2f2015b13afc0[m
+Merge: e53a558 806bba9
+Author: Matthew Oh <78940863+newbiz90@users.noreply.github.com>
+Date:   Sat Mar 9 13:56:13 2024 +0800
+
+    Merge pull request #3 from newbiz90/dp_user_model
+    
+    Dp user model
+
+[33mcommit 806bba9de2d3c98ca992ced7b9a6cd61b6b2f833[m[33m ([m[1;31morigin/dp_user_model[m[33m)[m
+Author: Matthew Oh <newbiz90@hotmail.com>
+Date:   Sat Mar 9 13:54:38 2024 +0800
+
+    rails generate device:view users
+
+[33mcommit 63f1ca316e91029a657f1a57871d508e999f6e5d[m
+Author: Matthew Oh <newbiz90@hotmail.com>
+Date:   Sat Mar 9 13:44:37 2024 +0800
+
+    seed file for user created
+
+[33mcommit e53a5586d52ba8eabb138fa2e4ed6d79d5f2fb7e[m
+Merge: fb3275e 005b56b
+Author: Matthew Oh <78940863+newbiz90@users.noreply.github.com>
+Date:   Sat Mar 9 12:03:13 2024 +0800
+
+    Merge pull request #2 from newbiz90/matthew
+    
+    Added Cloudinary
+
+[33mcommit 005b56bb3691118b5bca9e158dadaed1bc63413a[m
+Author: Matthew Oh <newbiz90@hotmail.com>
+Date:   Sat Mar 9 12:00:47 2024 +0800
+
+    fixed merge conficts
+
+[33mcommit 6c6dc2a79266ad156db42e40af5a0dc5f74c130c[m
+Author: Matthew Oh <newbiz90@hotmail.com>
+Date:   Sat Mar 9 11:58:22 2024 +0800
+
+    fixed merge conficts
+
+[33mcommit fb3275eb3277a076c0e3ef34463651085dc56af6[m
+Merge: 5fe63a6 c2ca479
+Author: ericsson chan <100125542+ericssonchannn@users.noreply.github.com>
+Date:   Sat Mar 9 11:46:42 2024 +0800
+
+    Merge pull request #1 from newbiz90/eric
+    
+    Implement Basic Auth using Devise gem
+
+[33mcommit c2ca479315329538bd7e3d54d2585d98f6056977[m
+Author: ericsson chan <ericssonchann@gmail.com>
+Date:   Sat Mar 9 11:43:58 2024 +0800
+
+    basic auth
+
+[33mcommit 5fe63a6f4758897868582ab8e3030965478b54d3[m
+Author: Matthew Oh <newbiz90@hotmail.com>
+Date:   Mon Mar 4 21:40:21 2024 +0800
+
+    bundle install, db:create, db:migrate
+
+[33mcommit 436d968ce6253c38ad8fcfa1a489a0798ac7cba5[m
+Author: Matthew Oh <newbiz90@hotmail.com>
+Date:   Mon Mar 4 21:35:17 2024 +0800
+
+    first-push

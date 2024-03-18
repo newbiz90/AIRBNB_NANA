@@ -1,5 +1,8 @@
 <h1>Booking Details</h1>
 <p>Status: <%= @booking.status %></p>
+<p>Start Date: <%= @booking.start_date.strftime("%B %d, %Y") %></p>
+<p>End Date: <%= @booking.end_date.strftime("%B %d, %Y") %></p>
+
 
 <% if @booking.status == 'pending' %>
   <%= form_with(model: @booking, url: accept_booking_path(@booking), method: :patch) do |form| %>
