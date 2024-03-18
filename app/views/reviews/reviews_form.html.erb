@@ -1,0 +1,7 @@
+<div class="review-form mt-3">
+   <%= simple_form_for([@booking, @review ]) do |f| %>
+    <%= f.input :rating, as: :select, collection: (1..5), input_html: { id: 'rating' } %>
+    <%= f.input :content %>
+    <%= f.submit 'Create review', class: "button mt-3 mb-3" %>
+   <% end %>
+ </div>
