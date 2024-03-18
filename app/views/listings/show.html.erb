@@ -41,7 +41,9 @@
                 <small class="mx-3"><%= distance_of_time_in_words(Time.now, review.created_at) %> ago</small>
                 <div class="d-flex mt-1">
                   <% rating = review.rating %>
-                  Rating: <%= pp rating %>
+                  Rating: <% rating.times do %>
+                              <%= pp "⭐" %>
+                          <% end %>
                 </div>
                 <p id="review-<%= review.id %>"><%= review.content %></p>
               </li>
