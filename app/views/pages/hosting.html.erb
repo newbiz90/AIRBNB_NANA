@@ -1,26 +1,31 @@
 <div class="container mt-5">
-   <h1>Welcome, <%= current_user.username %>!</h1>
+   <div class="d-flex justify-content-between">
+      <h1>Welcome, <%= current_user.username %>!</h1>
+      <%= link_to "Create New Listing", new_listing_path, class: "btn btn-primary btn-lg text-white" %>
+   </div>
 
    <div class="row mt-5">
       <div class="col-md-4">
          <div class="card">
             <div class="card-header bg-primary text-white">
                Pending Bookings
-            </div>
-            <div class="card-body">
+            </div> 
+            <div class="card-body bg-white">
                <% @pending_bookings.each do |booking| %>
-               <div class="card mb-3">
+               <div class="card mb-3 bg-white shadow-sm">
                   <div class="card-body">
                      <h5 class="card-title"><%= booking.listing.title %></h5>
                      <p class="card-text">Guest name: <%= booking.user.username %></p>
-                     <p class="card-text">Start date: <%= booking.start_date %></p>
-                     <p class="card-text">End date: <%= booking.end_date %></p>
-                     <%= form_with(model: booking, url: accept_booking_path(booking), method: :patch) do |form| %>
-                        <%= form.submit 'Accept', class: 'btn btn-success me-2' %>
-                     <% end %>
-                     <%= form_with(model: booking, url: reject_booking_path(booking), method: :patch) do |form| %>
-                        <%= form.submit 'Reject', class: 'btn btn-danger' %>
-                     <% end %>
+                     <p class="card-text">Start date: <%= booking.start_date.strftime('%e %B %Y') %></p>
+                     <p class="card-text">End date: <%= booking.end_date.strftime('%e %B %Y') %></p>
+                     <div class="d-flex">
+                        <%= form_with(model: booking, url: accept_booking_path(booking), method: :patch) do |form| %>
+                           <%= form.submit 'Accept', class: 'btn btn-success me-2' %>
+                        <% end %>
+                        <%= form_with(model: booking, url: reject_booking_path(booking), method: :patch) do |form| %>
+                           <%= form.submit 'Reject', class: 'btn btn-danger' %>
+                        <% end %>
+                     </div>
                   </div>
                </div>
                <% end %>
@@ -33,9 +38,9 @@
             <div class="card-header bg-primary text-white">
                Upcoming Bookings
             </div>
-            <div class="card-body">
+            <div class="card-body bg-white">
                <% @upcoming_bookings.each do |booking| %>
-               <div class="card mb-3">
+               <div class="card mb-3 bg-white shadow-sm">
                   <div class="card-body">
                      <h5 class="card-title"><%= booking.listing.title %></h5>
                      <p class="card-text">Guest name: <%= booking.user.username %></p>
@@ -53,19 +58,28 @@
             <div class="card-header bg-primary text-white">
                Past Bookings
             </div>
-            <div class="card-body">
+            <div class="card-body bg-white">
                <% @past_bookings.each do |booking| %>
-               <div class="card mb-3">
+               <div class="card mb-3 bg-white shadow-sm">
                   <div class="card-body">
                      <h5 class="card-title"><%= booking.listing.title %></h5>
                      <p class="card-text">Guest name: <%= booking.user.username %></p>
                      <p class="card-text">Start date: <%= booking.start_date %></p>
                      <p class="card-text">End date: <%= booking.end_date %></p>
                      <hr>
+                     <% if booking.review.present? %>
                      <div>
-                        <span style="color: pink;">★★★★</span>
-                        <p class="card-text">Review here if any</p>
+                        <h5><small>Guest Review</small></h5>
+                        <span style="color: pink;">
+                           <% booking.review.rating.times do %>
+                              ⭐
+                           <% end %>
+                        </span>
+                        <p class="card-text">
+                         <%= booking.review.content %>
+                         </p>
                      </div>
+                     <% end %>
                   </div>
                </div>
                <% end %>

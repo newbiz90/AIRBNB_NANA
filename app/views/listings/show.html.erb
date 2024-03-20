@@ -5,7 +5,7 @@
       <h3 class="fw-bold mb-3 mt-3">Listing Title : <%= @listing.title%></h3>
         <% if @listing.photos.attached? %>
           <% photo = @listing.photos.first %>
-          <img src="https://source.unsplash.com/random/airbnb" alt="listing_image" width="600" height="400">
+          <%= cl_image_tag(@listing.photos.first.key, width: 600, height: 400, crop: :fill) %>
         <% else %>
           <!-- If no photo is attached, you may display a placeholder or handle it differently -->
           <p>No photo available</p>

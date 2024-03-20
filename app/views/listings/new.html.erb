@@ -9,9 +9,9 @@
           <%= f.input :price %>
 
           <!-- File input field for uploading photos -->
-          <%= f.input :photos %>
+          <%= f.input :photos, input_html: { multiple: true }  %>
 
-          <%= f.submit class: 'btn btn-flat' %>
+          <%= f.submit class: 'btn btn-primary btn-lg text-white' %>
         <% end %>
       </div>
     </div>

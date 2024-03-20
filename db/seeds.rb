@@ -76,6 +76,22 @@ booking2 = Booking.create!(
   # Add any other booking attributes as needed
 )
 
+booking3 = Booking.create!(
+  user: guest_user,
+  listing: listing2,
+  status: 'confirmed',
+  start_date: Date.today - 17,
+  end_date: Date.today - 10
+  # Add any other booking attributes as needed
+).tap do |booking|
+  Review.create!(
+    booking:,
+    user: guest_user,
+    rating: 3,
+    content: "An okay stay!"
+  )
+end
+
 review3 = Review.create!(
   user: guest_user,
   booking: booking2,
