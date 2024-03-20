@@ -32,7 +32,7 @@
   <%# review container %>
     <div class="col-md-6">
       <div class="review-container">
-        <h5>Reviews</h5>
+        <h4>Reviews</h4>
         <% if @reviews.present? %>
           <% @reviews.each do |review| %>
             <ul class="lists list-group list-group-flush">
@@ -45,7 +45,7 @@
                               <%= pp "⭐" %>
                           <% end %>
                 </div>
-                <p id="review-<%= review.id %>"><%= review.content %></p>
+                <p id="review-<%= review.id %>">Comments: <%= review.content %></p>
               </li>
             </ul>
           <% end %>
