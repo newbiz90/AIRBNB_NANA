@@ -1,36 +1,19 @@
-#this is a new form to be created
-<!-- app/views/listings/new.html.erb -->
-<h1>New Listing</h1>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Create a new list</h3>
+        <%= simple_form_for @listing do |f| %>
+          <%= f.input :title, placeholder: 'Beautiful Apartment' %>
+          <%= f.input :description, placeholder: 'A lovely place for getaway' %>
+          <%= f.input :price %>
 
-<%= form_with model: @listing, local: true do |form| %>
-  <% if @listing.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
+          <!-- File input field for uploading photos -->
+          <%= f.input :photos %>
 
-      <ul>
-      <% @listing.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
   </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price, step: 0.01 %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

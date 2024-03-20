@@ -16,9 +16,14 @@ Rails.application.routes.draw do
 
   get "/hosting", to: "pages#hosting"
 
+
   resources :listings do
     resources :bookings
   end
+
+  # messy patch but whateva @ Matthew Oh
+  get 'listings/:id', to: 'listings#show', as: 'listingtest'
+  # messy patch but whateva @ Matthew Oh
 
   resources :bookings do
     resources :reviews
