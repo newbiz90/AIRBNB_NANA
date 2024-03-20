@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="row">
  <%# main listing  %>
-    <div class="col-md-6">
-      <div class="about-listing">
+  <div class="col-md-12">
+    <div class="about-listing">
+      <h3 class="fw-bold mb-3 mt-3">Listing Title : <%= @listing.title%></h3>
         <% if @listing.photos.attached? %>
           <% photo = @listing.photos.first %>
           <img src="https://source.unsplash.com/random/airbnb" alt="listing_image" width="600" height="400">
@@ -10,10 +10,14 @@
           <!-- If no photo is attached, you may display a placeholder or handle it differently -->
           <p>No photo available</p>
         <% end %>
-        <div class="listing-details">
-          <h3>Listing Title : <%= @listing.title%></h3>
-          <p id="description"><%= @listing.description%></p>
-          <div class="listing-info">
+    </div>
+  </div>
+
+  <div class = "d-inline-flex justify-content-between w-100 mt-5">
+    <div class="listing-details">
+          <%# <h3>Listing Title : <%= @listing.title </h3> %>
+        <p id="description">Description: <%= @listing.description%></p>
+        <div class="listing-info">
             <div class="info-block">
               <p><i class="fas fa-home"></i> Listing Type</p>
               <p><i class="fas fa-users"></i> <%= @listing.user.username%></p>
@@ -26,10 +30,43 @@
             </div>
           </div>
         </div>
+
+    <%# booking form %>
+    <div>
+      <div class="card p-3 m-3" id="booking-form" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <!-- Include any additional content or components specific to your single listing page -->
+        <!-- Single Product Listing with Small Bounding Box -->
+        <h4 class="fw-bold">SGD<%= @listing.price %> / night</h4>
+
+        <%= simple_form_for([@listing, Booking.new]) do |f| %>
+          <div class="form-group">
+            <%= f.input :start_date, as: :string,class: 'form-control', input_html: {
+              "data-controller" => "datepicker"
+            } %>
+          </div>
+
+          <div class="form-group">
+            <%= f.input :end_date, as: :string,class: 'form-control', input_html: {
+              "data-controller" => "datepicker"
+            } %>
+          </div>
+
+          <%= f.submit "Book", class: "btn btn-primary" %>
+        <% end %>
+
+        <% if @booking && !@booking.review %>
+          <%= simple_form_for([ @booking, @review ]) do |f| %>
+            <%= f.input :rating, as: :select, collection: (1..5), input_html: { id: 'rating' } %>
+            <%= f.input :content %>
+            <%= f.submit 'Create review', class: "btn btn-primary" %>
+          <% end %>
+        <% end %>
       </div>
     </div>
+  </div>
 
   <%# review container %>
+  <div>
     <div class="col-md-6">
       <div class="review-container">
         <h4>Reviews</h4>
@@ -56,38 +93,4 @@
     </div>
   </div>
 
-  <%# booking form %>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="booking-form">
-        <!-- Include any additional content or components specific to your single listing page -->
-        <!-- Single Product Listing with Small Bounding Box -->
-        <h3>$<%= @listing.price %> SGD per night</h3>
-
-        <%= simple_form_for([@listing, Booking.new]) do |f| %>
-          <div class="form-group">
-            <%= f.input :start_date, as: :string,class: 'form-control', input_html: {
-              "data-controller" => "datepicker"
-            } %>
-          </div>
-
-          <div class="form-group">
-            <%= f.input :end_date, as: :string,class: 'form-control', input_html: {
-              "data-controller" => "datepicker"
-            } %>
-          </div>
-
-          <%= f.submit "Book", class: "btn btn-primary" %>
-        <% end %>
-
-        <% if @booking && !@booking.review %>
-          <%= simple_form_for([ @booking, @review ]) do |f| %>
-            <%= f.input :rating, as: :select, collection: (1..5), input_html: { id: 'rating' } %>
-            <%= f.input :content %>
-            <%= f.submit 'Create review', class: "button mt-3 mb-3" %>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
 </div>
