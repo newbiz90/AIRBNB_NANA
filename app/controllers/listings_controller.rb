@@ -5,6 +5,8 @@ class ListingsController < ApplicationController
     @booking = Booking.where(listing: @listing, user: current_user).order(created_at: :desc).first
     @review = Review.new
     @reviews = @listing.reviews
+    @host = @listing.user
+
   end
 
   def new
