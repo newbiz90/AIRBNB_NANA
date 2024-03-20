@@ -1,9 +1,18 @@
-<div class="booking-details">
-  <h2>Booking Details</h2>
-  <p>Status: <span class="<%= "status-" + @booking.status.downcase %>"><%= @booking.status %></span></p>
-  <p>Start Date: <span class="date"><%= @booking.start_date.strftime("%B %d, %Y") %></span></p>
-  <p>End Date: <span class="date"><%= @booking.end_date.strftime("%B %d, %Y") %></span></p>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<div class="container d-flex justify-content-center" style="padding: 12px;">
+  <div class="card" style="width: 18rem; margin-top: 20px;"padding: 10px;">
+    <%= image_tag 'farm_house.jpg', class: 'card-img-top', alt: 'Booking Image' %>
+    <div class="card-body">
+      <h5 class="card-title">Booking Details</h5>
+      <p class="card-text">Status: <span class="<%= "status-" + @booking.status.downcase %>"><%= @booking.status %></span></p>
+      <p class="card-text">Start Date: <span class="date"><%= @booking.start_date.strftime("%B %d, %Y") %></span></p>
+      <p class="card-text">End Date: <span class="date"><%= @booking.end_date.strftime("%B %d, %Y") %></span></p>
+    </div>
+  </div>
 </div>
+
+
 
 
 <%# REMOVE THE ACCEPT AND REJECT BUTTONS %>
