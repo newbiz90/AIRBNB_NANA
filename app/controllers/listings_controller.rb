@@ -17,7 +17,7 @@ class ListingsController < ApplicationController
     @listing = Listing.new(listing_params)
     @listing.user = current_user
     if @listing.save
-      redirect_to listingtest_path(@listing), notice: 'Listing was successfully created.'
+      redirect_to listings_path(@listing), notice: 'Listing was successfully created.'
     else
       render :new
     end

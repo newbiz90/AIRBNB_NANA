@@ -2,7 +2,7 @@
 
 <div class="container d-flex justify-content-center" style="padding: 12px;">
   <div class="card" style="width: 18rem; margin-top: 20px;"padding: 10px;">
-    <%= image_tag 'farm_house.jpg', class: 'card-img-top', alt: 'Booking Image' %>
+    <%= cl_image_tag(@booking.listing.photos.first.key, width: 400, height: 400, crop: :fill, class: "card-img-top", style: "border-radius: 10px; object-fit: cover; aspect-ratio: 1/1; width: 100%;") %>
     <div class="card-body">
       <h5 class="card-title">Booking Details</h5>
       <p class="card-text">Status: <span class="<%= "status-" + @booking.status.downcase %>"><%= @booking.status %></span></p>

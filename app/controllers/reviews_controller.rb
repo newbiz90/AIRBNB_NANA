@@ -6,9 +6,9 @@ class ReviewsController < ApplicationController
     @review.user = current_user
 
     if @review.save
-      redirect_to listing_path(@booking.listing), notice: 'Review saved' # Redirect to the index action
+      redirect_to @booking.listing, notice: 'Review saved' # Redirect to the index action
     else
-      redirect_to listing_path(@booking.listing), notice: 'Review saved' # Redirect to the index action
+      redirect_to @booking.listing, notice: 'Review saved' # Redirect to the index action
     end
   end
 

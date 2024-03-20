@@ -5,7 +5,7 @@
       <h3 class="fw-bold mb-3 mt-3">Listing Title : <%= @listing.title%></h3>
         <% if @listing.photos.attached? %>
           <% photo = @listing.photos.first %>
-          <%= cl_image_tag(@listing.photos.first.key, width: 600, height: 400, crop: :fill) %>
+          <%= cl_image_tag(@listing.photos.first.key, width: 600, height: 400, crop: :fill, class: "rounded-4") %>
         <% else %>
           <!-- If no photo is attached, you may display a placeholder or handle it differently -->
           <p>No photo available</p>
@@ -35,8 +35,8 @@
         </div>
 
     <%# booking form %>
-    <div>
-      <div class="card p-3 m-3" id="booking-form" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <div style="min-width: 20vw;">
+      <div class="card p-3 m-3 bg-white" id="booking-form" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
         <!-- Include any additional content or components specific to your single listing page -->
         <!-- Single Product Listing with Small Bounding Box -->
         <h4 class="fw-bold">SGD<%= @listing.price %> / night</h4>
@@ -56,23 +56,26 @@
 
           <%= f.submit "Book", class: "btn btn-primary" %>
         <% end %>
-
-        <% if @booking && !@booking.review %>
-          <%= simple_form_for([ @booking, @review ]) do |f| %>
-            <%= f.input :rating, as: :select, collection: (1..5), input_html: { id: 'rating' } %>
-            <%= f.input :content %>
-            <%= f.submit 'Create review', class: "btn btn-primary" %>
-          <% end %>
-        <% end %>
       </div>
     </div>
   </div>
 
   <%# review container %>
-  <div>
-    <div class="col-md-6">
+  <div class="mt-4">
+    <div class="">
       <div class="review-container">
         <h3 class="fw-bold">Reviews</h3>
+        <% if @booking && !@booking.review %>
+          <div class="card rounded-4 p-4 bg-white mb-4">
+              <h3 align="center">Leave Your Review</h3>
+              <%= simple_form_for([ @booking, @review ]) do |f| %>
+                <%= f.input :rating, as: :select, collection: (1..5), input_html: { id: 'rating' } %>
+                <%= f.input :content %>
+                <%= f.submit 'Create review', class: "btn btn-primary text-white btn-lg", style: "width: 100%" %>
+              <% end %>
+          </div>
+        <% end %>
+
         <% if @reviews.present? %>
           <% @reviews.each do |review| %>
             <ul class="lists list-group list-group-flush">
