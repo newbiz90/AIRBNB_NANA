@@ -15,8 +15,9 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listing_params)
+    @listing.user = current_user
     if @listing.save
-      redirect_to listings_path, notice: 'Listing was successfully created.' # Redirect to the index action
+      redirect_to listingtest_path(@listing), notice: 'Listing was successfully created.'
     else
       render :new
     end
@@ -29,6 +30,6 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:title, :description, :price)
+    params.require(:listing).permit(:title, :description, :price, :photos)
   end
 end

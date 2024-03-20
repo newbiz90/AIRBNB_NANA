@@ -1,11 +1,26 @@
-<h1>Booking Details</h1>
-<p>Status: <%= @booking.status %></p>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-<% if @booking.status == 'pending' %>
-  <%= form_with(model: @booking, url: accept_booking_path(@booking), method: :patch) do |form| %>
-    <%= form.submit 'Accept', class: 'btn btn-success' %>
-  <% end %>
-    <%= form_with(model: @booking, url: reject_booking_path(@booking), method: :patch) do |form| %>
-    <%= form.submit 'Reject', class: 'btn btn-danger' %>
-  <% end %>
-<% end %>
+<div class="container d-flex justify-content-center" style="padding: 12px;">
+  <div class="card" style="width: 18rem; margin-top: 20px;"padding: 10px;">
+    <%= image_tag 'farm_house.jpg', class: 'card-img-top', alt: 'Booking Image' %>
+    <div class="card-body">
+      <h5 class="card-title">Booking Details</h5>
+      <p class="card-text">Status: <span class="<%= "status-" + @booking.status.downcase %>"><%= @booking.status %></span></p>
+      <p class="card-text">Start Date: <span class="date"><%= @booking.start_date.strftime("%B %d, %Y") %></span></p>
+      <p class="card-text">End Date: <span class="date"><%= @booking.end_date.strftime("%B %d, %Y") %></span></p>
+    </div>
+  </div>
+</div>
+
+
+
+
+<%# REMOVE THE ACCEPT AND REJECT BUTTONS %>
+<%# if @booking.status == 'pending' %>
+  <%#= form_with(model: @booking, url: accept_booking_path(@booking), method: :patch) do |form| %>
+    <%#= form.submit 'Accept', class: 'btn btn-success' %>
+  <%# end %>
+    <%#= form_with(model: @booking, url: reject_booking_path(@booking), method: :patch) do |form| %>
+    <%#= form.submit 'Reject', class: 'btn btn-danger' %>
+  <%# end %>
+<%# end %>
