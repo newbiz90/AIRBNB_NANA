@@ -1,7 +1,8 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="about-listing">
+ <%# main listing  %>
+  <div class="col-md-12">
+    <div class="about-listing">
+      <h3 class="fw-bold mb-3 mt-3">Listing Title : <%= @listing.title%></h3>
         <% if @listing.photos.attached? %>
           <% photo = @listing.photos.first %>
           <img src="https://source.unsplash.com/random/airbnb" alt="listing_image" width="600" height="400">
@@ -9,10 +10,17 @@
           <!-- If no photo is attached, you may display a placeholder or handle it differently -->
           <p>No photo available</p>
         <% end %>
-        <div class="listing-details">
-          <h3>Listing Title : <%= @listing.title%></h3>
-          <p id="description"><%= @listing.description%></p>
-          <div class="listing-info">
+    </div>
+  </div>
+
+  <div class = "d-inline-flex justify-content-between w-100 mt-3">
+    <div class="listing-details" style="margin-right:20px;">
+        <h3 class="fw-bold"> This Is Supposed To Be Some Subtitle / Address. So Just Putting Some Random Words First </h3>
+        <div>
+          <h6 style="font-style: italic; background-color: #d6d6cd; width: 120px;">Hosted By <%= @listing.user.username %></h6>
+        </div>
+        <p id="description">Description: <%= @listing.description%></p>
+        <div class="listing-info">
             <div class="info-block">
               <p><i class="fas fa-home"></i> Listing Type</p>
               <p><i class="fas fa-users"></i> <%= @listing.user.username%></p>
@@ -25,38 +33,13 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="col-md-6">
-      <div class="review-container">
-        <h5>Reviews</h5>
-        <% if @reviews.present? %>
-          <% @reviews.each do |review| %>
-            <ul class="lists list-group list-group-flush">
-              <li class="border-bottom">
-                <span><%= review.user_id %></span>
-                <small class="mx-3"><%= distance_of_time_in_words(Time.now, review.created_at) %> ago</small>
-                <div class="d-flex mt-1">
-                  <%= review.rating %>
-                </div>
-                <p id="review-<%= review.id %>"><%= review.content %></p>
-              </li>
-            </ul>
-          <% end %>
-        <% else %>
-          <p>No reviews available</p>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <div class="booking-form">
+    <%# booking form %>
+    <div>
+      <div class="card p-3 m-3" id="booking-form" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
         <!-- Include any additional content or components specific to your single listing page -->
         <!-- Single Product Listing with Small Bounding Box -->
-        <h3>$<%= @listing.price %> SGD per night</h3>
+        <h4 class="fw-bold">SGD<%= @listing.price %> / night</h4>
 
         <%= simple_form_for([@listing, Booking.new]) do |f| %>
           <div class="form-group">
@@ -78,10 +61,40 @@
           <%= simple_form_for([ @booking, @review ]) do |f| %>
             <%= f.input :rating, as: :select, collection: (1..5), input_html: { id: 'rating' } %>
             <%= f.input :content %>
-            <%= f.submit 'Create review', class: "button mt-3 mb-3" %>
+            <%= f.submit 'Create review', class: "btn btn-primary" %>
           <% end %>
         <% end %>
       </div>
     </div>
   </div>
+
+  <%# review container %>
+  <div>
+    <div class="col-md-6">
+      <div class="review-container">
+        <h3 class="fw-bold">Reviews</h3>
+        <% if @reviews.present? %>
+          <% @reviews.each do |review| %>
+            <ul class="lists list-group list-group-flush">
+              <li class="border-bottom pt-3" style="list-style: none;">
+                <div class="d-inline-flex">
+                  <h5 class="fw-bold">User Id: <%= review.user_id %></h5>
+                  <small class="mx-3"><%= distance_of_time_in_words(Time.now, review.created_at) %> ago</small>
+                </div>
+                <div class="d-flex mt-1">
+                  <% rating = review.rating %>
+                  Rating: <%= rating.times do %> ⭐
+                          <% end %>
+                </div>
+                <p id="review-<%= review.id %>">Comments: <%= review.content %></p>
+              </li>
+            </ul>
+          <% end %>
+        <% else %>
+          <p>No reviews available</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
 </div>
